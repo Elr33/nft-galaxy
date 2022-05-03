@@ -3,6 +3,11 @@ import React, { useContext } from 'react'
 import { ConnectButton } from 'web3uikit'
 import Link from 'next/link'
 import logo from '../assets/amazon_logo.png'
+import { FaBox } from 'react-icons/fa'
+import { BsFillBookmarkFill, BsFillPersonFill } from 'react-icons/bs'
+import { AiOutlineHistory } from 'react-icons/ai'
+import logoFull from '../assets/amazon_logo_full.png'
+
 
 const isAuthenticated = true
 const username = 'Etienne'
@@ -20,6 +25,7 @@ const Sidebar = () => {
         setNickname: `text-lg font-bold flex flex-1 items-center mt-[20px] mb-[20px] text-white`,
         menu: `flex flex-col w-full h-full px-10 gap-10`,
         menuItem: `flex items-center text-lg font-bold cursor-pointer gap-2`,
+        companyName: `text-lg font-bold flex flex-1 pl-10 items-center mt-[20px]`,
     }
 
   return (
@@ -80,6 +86,27 @@ const Sidebar = () => {
                         <br /> Board
                       </div>
                         </Link>
+                        <div className={styles.menuItem}>
+                          <FaBox />
+                          Collections
+                        </div>
+                        <div className={styles.menuItem}>
+                          <BsFillBookmarkFill />
+                          Collections
+                        </div>
+                        <div className={styles.menuItem}>
+                          <BsFillPersonFill/>
+                          Collections
+                        </div>
+                        <Link href='/history'>
+                          <div className={styles.menuItem}>
+                          <AiOutlineHistory />
+                          Transaction History
+                          </div>
+                        </Link>
+                        <div className={styles.companyName}>
+                         <Image src={logoFull} alt='amazon' height={100} width={100} />
+                        </div>
                   </div>
                 </div>
         )
