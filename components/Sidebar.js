@@ -2,16 +2,20 @@ import Image from 'next/image'
 import React, { useContext } from 'react'
 import { ConnectButton } from 'web3uikit'
 
-const isAuthenticated = false
+const isAuthenticated = true
+const username = 'Etienne'
 
 const Sidebar = () => {
     
     const styles = {
         container: `h-full w-[300px] flex flex-col bg-[#fff] static`,
         profile: ` w-full py-16 flex flex-col justify-center items-center rounded-r-3xl bg-gradient-to-t from-[#0d141c] to-[#42667e] mt-[40px] mb-[50px] border-2 border-[#fb9701]`,
-        profilePicContainer: `flex  rounded-xl items-center justify-center w-full h-full mb-5`,
+        profilePicContainer: `flex rounded-xl items-center justify-center w-full h-full mb-5`,
         profilePic: `rounded-3xl object-cover`,
         welcome: ` text-md mb-2 font-bold text-2xl text-white`,
+        usernameInput: `bg-transparent border-white border-2 rounded-lg w-[80%] py-2 px-4 text-lg mt-[20px] placeholder:text-white focus:outline-none flex justify-center items-center text-white`,
+        username: `flex items-center w-full justify-center`,
+        setNickname: `text-lg font-bold flex flex-1 items-center mt-[20px] mb-[20px] text-white`,
     }
 
   return (
@@ -36,7 +40,7 @@ const Sidebar = () => {
                               type='text'
                               placeholder='Username....'
                               className={styles.usernameInput}
-                            //   value={nickname}
+                              // value={nickname}
                             //   onChange={e => setNickname(e.target.value)}
                             />
                           </div>
@@ -50,14 +54,14 @@ const Sidebar = () => {
                          </>
                          ) : (
                              <div>
-                                <div className={styles.welcome}>Welcome Etienne</div>
+                                <div className={styles.welcome}> Welcome {username} </div>
                              </div>  
                          )}    
                         </>  
                     )}
                     </div>
                 </div>
-            )
+        )
 }
 
 export default Sidebar
